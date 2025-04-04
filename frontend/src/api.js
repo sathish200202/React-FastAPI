@@ -5,16 +5,16 @@ import axiosInstance from './axios.js'
 export const fetchFruits = async() => {
     try{
     const response = await axiosInstance.get('/fruits')
-    return response.data.fruits
+    return response.data
     } catch(error) {
         console.error(error.message)
     }
 }
 
-export const postFruit = async(fruitName) => {
+export const postFruit = async(fruit_data) => {
     try{
-    const response = await axiosInstance.post('/fruits', {fruit: fruitName})
-    return response.data.fruits
+    const response = await axiosInstance.post('/fruits', fruit_data)
+    return response.data
     } catch(error){
      console.error(error.message)
     }
@@ -40,9 +40,9 @@ export const viewFruitById = async(fruit_id) => {
 }
 
 
-export const updateFruitById = async(fruit_id, fruit_name) => {
+export const updateFruitById = async(fruit_id, fruit_data) => {
     try{
-        const response = await axiosInstance.put("/fruit/"+fruit_id, {fruit: fruit_name})
+        const response = await axiosInstance.put("/fruit/"+fruit_id, fruit_data)
         return response.data
     } catch(error) {
         console.error(error.message)
