@@ -135,8 +135,8 @@ const AddFruitForm = () => {
             <div>
               <p>Fruit: {fruit.fruit_name}</p>
               <p>Quantity: {fruit.quantity}</p>
-              <p>Price: {fruit.price}(per fruit)</p>
-              <p>Total Price: {fruit.price * fruit.quantity}</p>
+              <p>Price:₹ {fruit.price}(per fruit)</p>
+              <p>Total Price:₹ {fruit.price * fruit.quantity}</p>
               <button onClick={handleEditFruit}>Edit</button>
               <button onClick={() => handleDeleteFruit(fruit.id)}>
                 Delete
